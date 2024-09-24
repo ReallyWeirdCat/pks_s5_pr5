@@ -103,14 +103,7 @@ class Details extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        child: Text(
-                          "В корзину!",
-                          style: TextStyle(
-                              color: Colors.grey[800],
-                              fontSize: MediaQuery.of(context).size.height * 0.03,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
+                        child: const Icon(Icons.shopping_cart, color: Colors.black)
                       ),
                     ),
                   ]

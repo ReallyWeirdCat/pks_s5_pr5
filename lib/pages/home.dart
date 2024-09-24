@@ -20,7 +20,7 @@ class HomeState extends State<Home> {
       products.add(
         Product(
           id: data_products.length + 1,
-          title: "Новый овощ",
+          title: "Неизвестный овощ",
           description: "",
           photo: "",
           price: 0,
@@ -51,7 +51,28 @@ class HomeState extends State<Home> {
       body: products.isEmpty ? const Center(child: Text('Сегодня мы здесь одни')) : ListView.builder(
           itemCount: products.length,
           itemBuilder: (BuildContext context, int index) {
-            return ProductComponent( product: products[index]);
+            final product = products[index];
+            return Dismissible(
+              key: Key(product.title),
+              direction: DismissDirection.startToEnd,
+              background: Container(
+                  padding: const EdgeInsets.all(16.0),
+                  color: Colors.red,
+                  alignment: Alignment.centerLeft,
+                  child: const Text(
+                    "Удалить",
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+              ),
+              child: ProductComponent( product: products[index]),
+              onDismissed: (direction) =>
+              {
+                setState(() {
+                  products.removeAt(index);
+                })
+              });
+
+
           }
       ),
       floatingActionButton: FloatingActionButton(
