@@ -70,7 +70,7 @@ class ProductComponent extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
+                  product.discount == 0 ? Container() :  Container(
                     padding: EdgeInsets.all(1),
                     width: MediaQuery.of(context).size.height * 0.12,
                     height: MediaQuery.of(context).size.height * 0.05,

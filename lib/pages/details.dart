@@ -62,7 +62,7 @@ class Details extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
+                      product.discount == 0 ? Container() : Container(
                       padding: EdgeInsets.all(1),
                       margin: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
                       width: MediaQuery.of(context).size.height * 0.1,
