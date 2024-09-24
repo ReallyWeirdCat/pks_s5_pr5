@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:pcs3_sem5/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:pcs3_sem5/components/product_component.dart';
@@ -53,27 +55,39 @@ class HomeState extends State<Home> {
           itemBuilder: (BuildContext context, int index) {
             final product = products[index];
             return Dismissible(
-              key: Key(product.title),
-              direction: DismissDirection.startToEnd,
+              key: Key(product.title + index.toString() + Random().nextInt(100).toString()),
+              direction: DismissDirection.horizontal, // Allow swiping in both directions
               background: Container(
-                  padding: const EdgeInsets.all(16.0),
-                  color: Colors.red,
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    "Удалить",
-                    style: TextStyle(color: Colors.white, fontSize: 40),
-                  ),
+                padding: const EdgeInsets.all(16.0),
+                color: Colors.red,
+                alignment: Alignment.centerLeft,
+                child: const Text(
+                  "Удалить",
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
               ),
-              child: ProductComponent( product: products[index]),
-              onDismissed: (direction) =>
-              {
-                setState(() {
-                  products.removeAt(index);
-                })
-              });
-
-
+              secondaryBackground: Container(
+                padding: const EdgeInsets.all(16.0),
+                color: Colors.green,
+                alignment: Alignment.centerRight,
+                child: const Text(
+                  "Править",
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
+              ),
+              child: ProductComponent(product: products[index]),
+              onDismissed: (direction) {
+                if (direction == DismissDirection.startToEnd) {
+                  setState(() {
+                    products.removeAt(index);
+                  });
+                } else if (direction == DismissDirection.endToStart) {
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => EditProductScreen(product: product)));
+                }
+              },
+            );
           }
+
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
