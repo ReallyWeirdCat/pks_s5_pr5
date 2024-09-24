@@ -2,6 +2,8 @@ import 'package:pcs3_sem5/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:pcs3_sem5/components/product_component.dart';
 
+import '../models/product.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -10,7 +12,29 @@ class Home extends StatefulWidget {
 }
 
 class HomeState extends State<Home> {
-  //const _HomeState({super.key});
+
+  var products = <Product>[];
+
+  void _addProduct() {
+    setState(() {
+      products.add(
+        Product(
+          id: data_products.length + 1,
+          title: "Новый овощ",
+          description: "",
+          photo: "https://i.imgur.com/qHQPla7.png",
+          price: 0,
+          discount: 0
+        )
+      );
+    });
+  }
+
+  void _removeProduct(int index) {
+    setState(() {
+      products.removeAt(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
