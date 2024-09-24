@@ -1,10 +1,12 @@
 import 'dart:math';
 
+import 'package:flutter/services.dart';
 import 'package:pcs3_sem5/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:pcs3_sem5/components/product_component.dart';
 
 import '../models/product.dart';
+import 'details.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -76,13 +78,64 @@ class HomeState extends State<Home> {
                 ),
               ),
               child: ProductComponent(product: products[index]),
+              confirmDismiss: (DismissDirection direction) async {
+                if (direction == DismissDirection.startToEnd) {return true;}
+                if (direction == DismissDirection.endToStart) {
+                  await showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        child: Container(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const Text("Редактирование", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+                              const TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Название",
+                                  )),
+                              const TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Описание",
+                                  )),
+                              const TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                    hintText: "Цена",
+                                  )),
+                              Slider(
+                                  value: 0,
+                                  min: 0,
+                                  max: 100,
+                                  onChanged: (value) {}
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor: Colors.white, backgroundColor: Colors.green
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: const Text("Сохранить"),
+                              ),
+                            ]
+                          )
+                        ),
+                      );
+                    },
+                  );
+                  //setState(() {});
+                  return false;
+                }
+              },
               onDismissed: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   setState(() {
                     products.removeAt(index);
                   });
                 } else if (direction == DismissDirection.endToStart) {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => EditProductScreen(product: product)));
+
                 }
               },
             );
