@@ -49,10 +49,16 @@ class HomeState extends State<Home> {
         ),
       ),
       body: ListView.builder(
-          itemCount: data_products.length,
+          itemCount: products.length,
           itemBuilder: (BuildContext context, int index) {
-            return ProductComponent( product: data_products[index]);
+            return ProductComponent( product: products[index]);
           }
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: _addProduct,
+        tooltip: 'Add Product',
+        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }

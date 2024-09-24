@@ -37,7 +37,7 @@ class Details extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Image(
-                  image: AssetImage(product.photo),
+                  image: NetworkImage(product.photo),
                   width: MediaQuery.of(context).size.width*0.9,
                 ),
               ),
@@ -51,7 +51,7 @@ class Details extends StatelessWidget {
                       width: MediaQuery.of(context).size.height * 0.1,
                       height: MediaQuery.of(context).size.height * 0.045,
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(color: const Color(0xFF40DF40),
+                      decoration: BoxDecoration(color: Colors.green,
                           borderRadius: BorderRadius.circular(5.0)),
                       child: Text(
                         "${product.discount} р",
@@ -98,7 +98,7 @@ class Details extends StatelessWidget {
                           //Navigator.of(context).pop();
                           },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFFFFF00),
+                          backgroundColor: Colors.yellow,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),

@@ -29,7 +29,7 @@ class ProductComponent extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5.0),
                 child: Image(
-                  image: AssetImage(product.photo),
+                  image: NetworkImage(product.photo),
                   height: MediaQuery.of(context).size.width * 0.9,
                   width: MediaQuery.of(context).size.width * 0.9,
                   fit: BoxFit.cover)
@@ -59,7 +59,7 @@ class ProductComponent extends StatelessWidget {
                     width: MediaQuery.of(context).size.height * 0.12,
                     height: MediaQuery.of(context).size.height * 0.05,
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(color: const Color(0xFF40DF40),
+                    decoration: BoxDecoration(color: Colors.green,
                         borderRadius: BorderRadius.circular(5.0)),
                     child: Text(
                       "${product.price} р",
