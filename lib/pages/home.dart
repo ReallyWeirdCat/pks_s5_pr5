@@ -2,8 +2,15 @@ import 'package:pcs3_sem5/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:pcs3_sem5/components/product_component.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  HomeState createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  //const _HomeState({super.key});
 
   @override
   Widget build(BuildContext context) {
