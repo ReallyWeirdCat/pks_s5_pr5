@@ -54,7 +54,7 @@ class Details extends StatelessWidget {
                       decoration: BoxDecoration(color: Colors.green,
                           borderRadius: BorderRadius.circular(5.0)),
                       child: Text(
-                        "${product.discount} р",
+                        "${product.price - product.price * product.discount / 100} р",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: MediaQuery.of(context).size.height * 0.03,

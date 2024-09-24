@@ -62,7 +62,7 @@ class ProductComponent extends StatelessWidget {
                     decoration: BoxDecoration(color: Colors.green,
                         borderRadius: BorderRadius.circular(5.0)),
                     child: Text(
-                      product.price > 0 ? "${product.price * product.discount / 100} р" : "FREE",
+                      product.price > 0 ? "${product.price - product.price * product.discount / 100} р" : "FREE",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: MediaQuery.of(context).size.height * 0.03,
