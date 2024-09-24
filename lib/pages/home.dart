@@ -22,7 +22,7 @@ class HomeState extends State<Home> {
           id: data_products.length + 1,
           title: "Новый овощ",
           description: "",
-          photo: "https://i.imgur.com/qHQPla7.png",
+          photo: "",
           price: 0,
           discount: 0
         )
@@ -48,7 +48,7 @@ class HomeState extends State<Home> {
           color: Colors.black,
         ),
       ),
-      body: ListView.builder(
+      body: products.isEmpty ? const Center(child: Text('Сегодня мы здесь одни')) : ListView.builder(
           itemCount: products.length,
           itemBuilder: (BuildContext context, int index) {
             return ProductComponent( product: products[index]);

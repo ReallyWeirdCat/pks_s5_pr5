@@ -29,7 +29,7 @@ class ProductComponent extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5.0),
                 child: Image(
-                  image: NetworkImage(product.photo),
+                  image: product.photo != "" ? NetworkImage(product.photo) : const AssetImage("images/sample_food.png"),
                   height: MediaQuery.of(context).size.width * 0.9,
                   width: MediaQuery.of(context).size.width * 0.9,
                   fit: BoxFit.cover)

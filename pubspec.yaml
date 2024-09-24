@@ -60,16 +60,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/tomatoes.png
-    - images/apple.jpg
-    - images/asparagus.png
-    - images/onion.jpg
-    - images/pumpkin.gif
-    - images/potatoes.png
-    - images/banana.jpg
-    - images/dota.png
-    - images/carrots.jpg
-    - images/cabbage.jpg
+    - images/sample_food.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

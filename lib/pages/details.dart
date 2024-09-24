@@ -37,7 +37,7 @@ class Details extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Image(
-                  image: NetworkImage(product.photo),
+                  image: product.photo != "" ? NetworkImage(product.photo) : const AssetImage("images/sample_food.png"),
                   width: MediaQuery.of(context).size.width*0.9,
                 ),
               ),
