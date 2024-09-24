@@ -19,6 +19,23 @@ class HomeState extends State<Home> {
 
   var products = <Product>[];
 
+  final titleController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final photoController = TextEditingController();
+  final priceController = TextEditingController();
+  final discountController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    titleController.dispose();
+    descriptionController.dispose();
+    photoController.dispose();
+    priceController.dispose();
+    discountController.dispose();
+    super.dispose();
+  }
+
   void _addProduct() {
     setState(() {
       products.add(
@@ -84,38 +101,69 @@ class HomeState extends State<Home> {
                   await showDialog(
                     context: context,
                     builder: (BuildContext context) {
+
+                      titleController.text = products[index].title;
+                      descriptionController.text = products[index].description;
+                      photoController.text = products[index].photo;
+                      priceController.text = products[index].price.toString();
+                      discountController.text = products[index].discount.toString();
                       return Dialog(
                         child: Container(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               const Text("Редактирование", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
-                              const TextField(
+                              TextFormField(
+                                  controller: titleController,
+                                  //initialValue: products[index].title,
                                   decoration: InputDecoration(
+
                                     hintText: "Название",
                                   )),
-                              const TextField(
+                              TextFormField(
+                                  controller: descriptionController,
+                                  //initialValue: products[index].description,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: 2,
                                   decoration: InputDecoration(
                                     hintText: "Описание",
                                   )),
-                              const TextField(
+                              TextFormField(
+                                  controller: photoController,
+                                  //initialValue: products[index].photo,
+                                  decoration: InputDecoration(
+                                    hintText: "Фото (URL)",
+                                  ),
+                              ),
+                              TextFormField(
+                                  controller: priceController,
+                                  //initialValue: products[index].price.toString(),
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
                                     hintText: "Цена",
                                   )),
-                              Slider(
-                                  value: 0,
-                                  min: 0,
-                                  max: 100,
-                                  onChanged: (value) {}
-                              ),
+                              TextFormField(
+                                  controller: discountController,
+                                  //initialValue: products[index].discount.toString(),
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                    hintText: "Скидка",
+                                  )),
+                              Container(margin: const EdgeInsets.symmetric(vertical: 16.0),),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   foregroundColor: Colors.white, backgroundColor: Colors.green
                                 ),
                                 onPressed: () {
+                                  products[index].title = titleController.text;
+                                  products[index].description = descriptionController.text;
+                                  products[index].price = priceController.text.isNotEmpty ? double.parse(priceController.text) : 0;
+                                  products[index].photo = photoController.text;
+                                  products[index].discount =  discountController.text.isNotEmpty ? int.parse(discountController.text) : 0;
+
                                   Navigator.of(context).pop();
+                                  setState(() {});
                                 },
                                 child: const Text("Сохранить"),
                               ),

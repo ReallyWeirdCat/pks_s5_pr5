@@ -1,10 +1,10 @@
 class Product {
-  final int id;
-  final String title;
-  final String description;
-  final String photo;
-  final double price;
-  final int discount;
+  int id;
+  String title;
+  String description;
+  String photo;
+  double price;
+  int discount;
 
   Product({
         required this.id,
