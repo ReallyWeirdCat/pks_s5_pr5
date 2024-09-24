@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
 
-  var products = <Product>[];
+  var products = data_products;
 
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();

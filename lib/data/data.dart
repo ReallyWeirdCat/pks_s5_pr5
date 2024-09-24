@@ -5,7 +5,7 @@ final List<Product> data_products = <Product>[
       id: 1,
       title: "Помидор",
       description: "Прекрасный сорт, который рекомендуется для еды в свежем виде. Очень сочный, полон витаминов, которые постоянно требуются нашему организму. Томаты относятся к раннеспелым. Растет небольшим кустом в 25-40 сантиметров. Но растение очень ветвистое и вмещает большое количество побегов на одну единицу. Зрелый плод желто-красного цвета. Средний вес одного помидора варьируется в пределах 100 грамм.",
-      photo: "images/tomatoes.png",
+      photo: "https://gulffruits.com/web/image/product.template/4499/image_512/%5B18823%5D%20Tomato%20Sanitized?unique=b4f9f45",
       price: 15,
       discount: 40
   ),
@@ -13,7 +13,7 @@ final List<Product> data_products = <Product>[
       id: 2,
       title: "Лук",
       description: "среднеранний сорт репчатого лука, с приятным нежным полуострым вкусом и характерным темно-красным цветом чешуек (встречается также более насыщенная окраска луковиц, вплоть до фиолетовой, и белый цвет внутренних сочных чешуек с фиолетовым оттенком). Вызреваемость лука Ред Барон составляет 80-90%, луковицы одногнездовые, крупные и плотные, ровные, форма луковиц – округлая, чуть приплюснутая. Масса одной луковицы до 130-150 гр",
-      photo: "images/onion.jpg",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtiZl3QaSozaufJQzv2D08b-vSWuvkr5Zvzw&s",
       price: 10,
       discount: 3
   ),
@@ -21,7 +21,7 @@ final List<Product> data_products = <Product>[
       id: 3,
       title: "Тыква",
       description: "Праздничный овощ (в недружественных странах).",
-      photo: "images/pumpkin.gif",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf2OEz1l1yoHnvFQv4Elsj_B0zCUtQFNDEfA&s",
       price: 35.9,
       discount: 5
   ),
@@ -29,56 +29,8 @@ final List<Product> data_products = <Product>[
     id: 4,
     title: "Аспарагус",
     description: "Я про него слышал в каком-то сериале, не знаю, что это.",
-    photo: "images/asparagus.png",
+    photo: "https://ip.prod.freshop.retail.ncrcloud.com/resize?url=https://images.freshop.ncrcloud.com/00000000940801/76ab92914796a8b115456a4c36584167_large.png&width=512&type=webp&quality=90",
     price: 25,
     discount: 10,
-  ),
-  Product(
-      id: 5,
-      title: "Капуста",
-      description: "Сорт ультраскороспелый (период от всходов до технической спелости 90-117 дней). Кочаны круглые, массой 1,0-2,4 кг, плотность хорошая. Созревание кочанов достаточно дружное. Вкусовые качества хорошие. Урожайность 4-5 кг/м2. Сорт пластичный, относительно устойчив к повреждению капустной мухой, к весенним похолоданиям и заморозкам до –50С. Рекомендуется для использования в свежем виде в раннелетний период.",
-      photo: "images/cabbage.jpg",
-      price: 50,
-      discount: 25
-  ),
-  Product(
-      id: 6,
-      title: "Картошка",
-      description: "Низкое и умеренное потребление картофеля было связано с более низкой смертностью от всех причин в Китае[22]. Потребление картофеля потенциально связано с гипертонией у населения Китая[23]. Частое (5+ порций в неделю) потребление картофеля было связано с более высоким риском развития ишемической болезни сердца среди 148 671 участника программы «Миллион ветеранов» (MVP)[24]. Высокое потребление картофеля может быть тесно связано с повышенным риском развития диабета[25][26]. ",
-      photo: "images/potatoes.png",
-      price: 5,
-      discount: 75
-  ),
-  Product(
-      id: 6,
-      title: "Дота",
-      description: "Ты - то, что ты ешь",
-      photo: "images/dota.png",
-      price: 5.99,
-      discount: 75
-  ),
-  Product(
-      id: 6,
-      title: "Морковь",
-      description: "Но это сосиски...",
-      photo: "images/carrots.jpg",
-      price: 7.99,
-      discount: 75
-  ),
-  Product(
-      id: 6,
-      title: "Яблоко",
-      description: "Товар уценен: это фрукт.",
-      photo: "images/apple.jpg",
-      price: 14.99,
-      discount: 75
-  ),
-  Product(
-      id: 6,
-      title: "Бананы",
-      description: "Знаем, что вы зашли в овощной, но мало ли? Бананы нужны всем.",
-      photo: "images/banana.jpg",
-      price: 25.99,
-      discount: 75
-  ),
+  )
 ];
