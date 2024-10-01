@@ -36,8 +36,12 @@ class ScreenState extends State<Screen> {
             label: 'Главная',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
+            icon: Icon(Icons.liquor),
+            label: 'На закуску',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mood),
+            label: 'Чел',
           ),
 
         ],

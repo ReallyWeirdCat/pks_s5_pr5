@@ -69,7 +69,11 @@ class HomeState extends State<Home> {
           color: Colors.black,
         ),
       ),
-      body: products.isEmpty ? const Center(child: Text('Сегодня мы здесь одни')) : ListView.builder(
+      body: products.isEmpty ? const Center(child: Text('Сегодня мы здесь одни')) : GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.8,
+          ),
           itemCount: products.length,
           itemBuilder: (BuildContext context, int index) {
             final product = products[index];
