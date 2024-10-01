@@ -5,6 +5,7 @@ class Product {
   String photo;
   double price;
   int discount;
+  bool isFavorite;
 
   Product({
         required this.id,
@@ -12,6 +13,7 @@ class Product {
         required this.description,
         required this.photo,
         required this.price,
-        required this.discount
+        required this.discount,
+        this.isFavorite = false
   });
 }

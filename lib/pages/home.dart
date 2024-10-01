@@ -98,7 +98,7 @@ class HomeState extends State<Home> {
                   style: TextStyle(color: Colors.white, fontSize: 40),
                 ),
               ),
-              child: ProductComponent(product: products[index]),
+              child: ProductComponent(product: products[index], sstate: setState),
               confirmDismiss: (DismissDirection direction) async {
                 if (direction == DismissDirection.startToEnd) {return true;}
                 if (direction == DismissDirection.endToStart) {

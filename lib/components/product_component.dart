@@ -3,10 +3,20 @@ import 'package:pcs3_sem5/pages/details.dart';
 import 'package:pcs3_sem5/models/product.dart';
 import 'package:pcs3_sem5/util/string_utils.dart';
 
-class ProductComponent extends StatelessWidget {
-  const ProductComponent({super.key, required this.product});
+class ProductComponent extends StatefulWidget {
+  ProductComponent({required this.product, required this.sstate});
 
   final Product product;
+  final Function sstate;
+  @override
+  ProductComponentState createState() => ProductComponentState(product: product, sstate: sstate);
+}
+
+class ProductComponentState extends State<ProductComponent> {
+  ProductComponentState({required this.product, required this.sstate});
+
+  final Product product;
+  final Function sstate;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +97,17 @@ class ProductComponent extends StatelessWidget {
                         fontWeight: FontWeight.bold
                       ),
                     ),
+                  ),
+                  IconButton(
+                      onPressed: (){
+
+                        product.isFavorite = !product.isFavorite;
+                        setState(() {
+                        });
+                      },
+                      icon: product.isFavorite ?
+                      const Icon(Icons.favorite) :
+                      const Icon(Icons.favorite_outline),
                   )
                 ]
               )

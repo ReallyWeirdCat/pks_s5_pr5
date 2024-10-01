@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcs3_sem5/pages/favorites.dart';
 import 'package:pcs3_sem5/pages/home.dart';
 
 
@@ -14,7 +15,7 @@ class ScreenState extends State<Screen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Home()
+    Favorites()
   ];
 
   void _onItemTapped(int index) {
