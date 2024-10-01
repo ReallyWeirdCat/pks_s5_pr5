@@ -84,7 +84,7 @@ class ProductComponentState extends State<ProductComponent> {
                   ),
                   product.discount <= 0 ? Container() :  Container(
                     padding: EdgeInsets.all(1),
-                    width: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.height * 0.04,
                     height: MediaQuery.of(context).size.height * 0.04,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(color: Colors.red,
