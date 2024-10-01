@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 
 class HomeState extends State<Home> {
 
-  var products = data_products;
+  var products = dataProducts;
 
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
@@ -40,7 +40,7 @@ class HomeState extends State<Home> {
     setState(() {
       products.add(
         Product(
-          id: data_products.length + 1,
+          id: dataProducts.length + 1,
           title: "Неизвестный овощ",
           description: "",
           photo: "",

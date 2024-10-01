@@ -1,6 +1,6 @@
 import 'package:pcs3_sem5/models/product.dart';
 
-final List<Product> data_products = <Product>[
+final List<Product> dataProducts = <Product>[
   Product(
       id: 1,
       title: "Помидор",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pcs3_sem5/pages/home.dart';
+import 'package:pcs3_sem5/pages/screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Папин Николай ЭФБО-02-22',
       theme: ThemeData(
       ),
-      home: const Home(),
+      home: const Screen(),
     );
   }
 }
